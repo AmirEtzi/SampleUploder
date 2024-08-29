@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Sample-Uploader</title>
+  </head>
+
+  <body>
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <div class="container">
+        <div class="casc"><span class="firstSection">CASC</span></div>
+        <div class="login">
+          <img
+            src="{% static 'assets/Cascavel 2.png' %}"
+            class="img"
+            width="30%"
+            alt="logo"
+          />
+          <h1
+            style="
+              margin-top: 2rem;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+            "
+          ></h1>
+          <input
+            type="text"
+            name="username"
+            id="userName"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+          <button id="Loginbtn">login</button>
+        </div>
+        <div class="avel"><span class="secondSection">AVEL</span></div>
+      </div>
+    </form>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
+{% endblock %}

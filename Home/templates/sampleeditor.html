@@ -1,0 +1,36 @@
+{% load static %} {% block content %} {% if user.is_authenticated %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+  <title>panel</title>
+</head>
+
+<div class="contain">
+  <span
+    style="
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+      font-size: 3rem;
+      color: rgb(124, 131, 64);
+    "
+    >Edit Your Sample</span
+  >
+
+  <form method="POST">
+    {% csrf_token %} {{ form.as_p }} <br />
+    <button id="accept" type="submit">Edit</button>
+    <br />
+  </form>
+  <br /><br /><br /><br /><br />
+</div>
+
+{% else %}
+<br />
+You are not authorized to view this page... Please login first!
+<br />
+{%endif %}
+<br />
+{% endblock %}

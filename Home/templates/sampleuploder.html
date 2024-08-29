@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+  <title>panel</title>
+</head>
+
+{% if user.is_authenticated %}
+<div class="contain">
+  <div class="form">
+    <span
+      style="
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        font-size: 3rem;
+        color: rgb(124, 131, 64);
+      "
+      >Upload Your Sample</span
+    >
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %} {{ form.as_p }}
+      <button id="accept" type="submit">Upload</button>
+    </form>
+  </div>
+  <div class="area">
+    <a href="{% url 'sampleviewer' %}">
+      <button class="showButton">showList Of samples</button>
+    </a>
+  </div>
+</div>
+{% else %}
+<br />
+You are not authorized to view this page... Please login first!
+<br />
+{%endif %}
+<br />
+{% endblock %}
