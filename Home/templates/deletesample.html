@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block content %}
+
+{% if user.is_authenticated %}
+<br/> <br/>
+<div class="container">
+<div class="card">
+  <div class="card-header">
+    Do You Want To Delete: {{ post.title }} ?
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+
+      <p>
+        <form method="POST">
+        {% csrf_token %}
+        <strong>Are you sure?!</strong><br />
+      </p>
+
+      
+      <button class="btn btn-danger">Delete</button>
+      
+      </form>
+    </blockquote>
+  </div>
+</div>
+</div>
+{% else %}
+<br />
+You are not authorized to view this page... Please login first!
+<br />
+{%endif %}
+<br />
+
+
+<br /><br />
+
+{% endblock %}
