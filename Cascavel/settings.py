@@ -48,6 +48,8 @@ MIDDLEWARE = [
 # __________________________
 CORS_ALLOW_ALL_ORIGINS = True
 
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "unsafe-none"
+
 
 CORS_ALLOW_CREDENTIALS = True
 
