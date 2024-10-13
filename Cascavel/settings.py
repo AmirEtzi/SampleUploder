@@ -51,6 +51,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS = True
 
+# __________________________
 CORS_ALLOW_METHODS = [
     "GET",
     "POST",
