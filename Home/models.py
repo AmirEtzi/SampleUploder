@@ -11,15 +11,10 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-
     title = models.CharField(max_length=100)
-
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    body = models.TextField(null=True, blank=True)
-
-    link = models.URLField(null=True, blank=True)
-
+    body = models.TextField()
+    link = models.URLField()
     category = models.ForeignKey(
         Category, null=True, blank=True, default=1, on_delete=models.CASCADE
     )

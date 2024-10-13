@@ -106,7 +106,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, ("You have been logged in!"))
-            return redirect("home")
+            return redirect("sampleuploder")
         else:
             messages.error(request, ("There was an error, please try again"))
             return redirect("login")
